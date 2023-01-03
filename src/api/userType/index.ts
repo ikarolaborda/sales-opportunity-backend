@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/user-type`,
+    require('./userTypeCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/user-type/:id`,
+    require('./userTypeUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/user-type/import`,
+    require('./userTypeImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/user-type`,
+    require('./userTypeDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/user-type/autocomplete`,
+    require('./userTypeAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/user-type`,
+    require('./userTypeList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/user-type/:id`,
+    require('./userTypeFind').default,
+  );
+};
